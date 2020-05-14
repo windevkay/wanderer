@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 //providers
 import './providers/greatPlaces.provider.dart';
 //screens
 import './screens/placesList.screen.dart';
 import './screens/addPlace.screen.dart';
+import './screens/placeDetail.screen.dart';
 
-void main() {
-  runApp(MyApp());
+Future main() async {
+  // load environment variables
+  await DotEnv().load('.env');
+  return runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +25,10 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
               primarySwatch: Colors.indigo, accentColor: Colors.amber),
           home: PlacesListScreen(),
-          routes: {AddPlaceScreen.routeName: (ctx) => AddPlaceScreen()}),
+          routes: {
+            AddPlaceScreen.routeName: (ctx) => AddPlaceScreen(),
+            PlaceDetailScreen.routeName: (ctx) => PlaceDetailScreen(),
+          }),
     );
   }
 }

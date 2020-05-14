@@ -22,6 +22,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Wanderer needs access to location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Wanderer needs access to location</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Wanderer needs access to Camera</string>
 	<key>NSMicrophoneUsageDescription</key>
